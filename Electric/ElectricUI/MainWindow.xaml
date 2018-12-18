@@ -5,8 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ElectricUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+       WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Title="MainWindow">
+    <Border Padding="10" VerticalAlignment="Center">
+        <StackPanel>
+            <TextBlock Text="Please Login or Register to access the application." FontWeight="Bold" Margin="0 10 0 0" HorizontalAlignment="Center" />
+            <TextBlock Name="tbxLoginInvalid" Visibility="Hidden" Text="This Is The Error Message." Foreground="Red" FontWeight="Bold" Margin="0 10 0 20" HorizontalAlignment="Center" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+
+
+                <!-- Image -->
+                <StackPanel VerticalAlignment="Center" Grid.Column="0" Margin="0 0 0 0">
+                    <Image Source="images/my_electric_car.png" Width="180"/>
+                </StackPanel>
+
+                <!-- Form Fields -->
+                <StackPanel Grid.Column="1" Margin="0 0 0 10">
+                    <Label Content="Username" />
+                    <TextBox Name="tbxLoginUserName" Padding="2" Margin="10 0 10 10" ToolTip="Login with your user id." TabIndex="0" />
+                    <Label Content="Password" />
+                    <PasswordBox Name="tbxLoginPassword" Padding="2" Margin="10 0 10 0"  ToolTip="Enter your password." TabIndex="1" />
+                </StackPanel>
+            </Grid>
+            <TextBlock Text="If you do not have a login press 'Register'" Margin="0 10 0 10" HorizontalAlignment="Center" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Name="btnLoginRegister" Margin="0 0 10 0" Grid.Column="0" Content="Register" TabIndex="2" />
+                <Button Name="btnLoginCancel" Margin="0 0 0 0" Grid.Column="1" Content="Cancel - Exit" TabIndex="3" />
+                <Button Name="btnLoginLogin" Margin="10 0 0 0" Grid.Column="2" Content="Login" TabIndex="4" />
+
+            </Grid>
+        </StackPanel>
+    </Border>
 </Window>
