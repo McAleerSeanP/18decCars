@@ -7,7 +7,7 @@
         mc:Ignorable="d"
        WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        Title="MainWindow">
+        Title="MainWindow" Height="300" Width="600">
     <Border Padding="10" VerticalAlignment="Center">
         <StackPanel>
             <TextBlock Text="Please Login or Register to access the application." FontWeight="Bold" Margin="0 10 0 0" HorizontalAlignment="Center" />
