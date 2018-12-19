@@ -11,7 +11,7 @@
     <Border Padding="10" VerticalAlignment="Center">
         <StackPanel>
             <TextBlock Text="Please Login or Register to access the application." FontWeight="Bold" Margin="0 10 0 0" HorizontalAlignment="Center" />
-            <TextBlock Name="tbxLoginInvalid" Visibility="Hidden" Text="This Is The Error Message." Foreground="Red" FontWeight="Bold" Margin="0 10 0 20" HorizontalAlignment="Center" />
+            <Label Name="lblLoginErrorMessage" Content="" Foreground="Red" FontWeight="Bold" Margin="0 0 0 10" HorizontalAlignment="Center" />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
@@ -40,9 +40,9 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Button Name="btnLoginRegister" Margin="0 0 10 0" Grid.Column="0" Content="Register" TabIndex="2" />
-                <Button Name="btnLoginCancel" Margin="0 0 0 0" Grid.Column="1" Content="Cancel - Exit" TabIndex="3" />
-                <Button Name="btnLoginLogin" Margin="10 0 0 0" Grid.Column="2" Content="Login" TabIndex="4" />
+                <Button Name="btnLoginRegister" Margin="0 0 10 0" Grid.Column="0" Content="Register" Click="btnRegister_Click" TabIndex="2" />
+                <Button Name="btnLoginCancel" Margin="0 0 0 0" Grid.Column="1" Content="Cancel - Exit" Click="btnCancel_Click" TabIndex="3" />
+                <Button Name="btnLoginLogin" Margin="10 0 0 0" Grid.Column="2" Content="Login" Click="btnLogin_Click" TabIndex="4" />
 
             </Grid>
         </StackPanel>

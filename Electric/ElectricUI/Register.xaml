@@ -1,0 +1,78 @@
+﻿<Window x:Class="ElectricUI.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElectricUI"
+        mc:Ignorable="d"
+         Title="Register" Height="450" Width="800">
+    <Border Padding="10" VerticalAlignment="Center">
+        <StackPanel>
+            <TextBlock Text="Register for access to the application." FontWeight="Bold" Margin="0 0 0 20" HorizontalAlignment="Center" />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+
+
+                <!-- Image -->
+                <StackPanel VerticalAlignment="Center" Grid.Column="0" Margin="0 0 0 0">
+                    <Image Source="images/my_electric_car.png" Width="180"/>
+                </StackPanel>
+
+                <!-- Form Fields -->
+                <StackPanel Grid.Column="1" Margin="0 0 0 0">
+                    <DockPanel Width="Auto">
+                        <Label Content="Desired Username" Margin="5"/>
+                        <TextBox Name="tbxRegisterUserName" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                    </DockPanel>
+
+                    <DockPanel Width="Auto">
+                        <Label Content="Your First Name" Margin="5"/>
+                        <TextBox Name="tbxRegisterForename" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                    </DockPanel>
+
+                    <DockPanel Width="Auto">
+                        <Label Content="Your Last Name" Margin="5"/>
+                        <TextBox Name="tbxRegisterSurname" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                    </DockPanel>
+                    <DockPanel Width="Auto">
+                        <Label Content="Your EMail" Margin="5"/>
+                        <TextBox Name="tbxRegisterEMail" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                    </DockPanel>
+                    <DockPanel Width="Auto">
+                        <Label Content="Your Mobile Phone" Margin="5"/>
+                        <TextBox Name="tbxRegisterPhone" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                    </DockPanel>
+                    <DockPanel Width="Auto">
+                        <Label Content="Your Car Registration (Number Plate)" Margin="5"/>
+                        <TextBox Name="tbxRegisterCarReg" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                    </DockPanel>
+                    <DockPanel Width="Auto">
+                        <Label Content="Password" Margin="5"/>
+                        <PasswordBox Name="tbxRegisterPassword" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                    </DockPanel>
+                    <DockPanel Margin="0 0 0 10" Width="Auto">
+                        <Label Content="Repeat Password" Margin="5"/>
+                        <PasswordBox Name="tbxRegisterPasswordRpt" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                    </DockPanel>
+                </StackPanel>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Button Name="btnRegisterCancel" Click="btxRegisterCancel_Click" Margin="0 0 0 0" Grid.Column="1" Content="Cancel" TabIndex="3" />
+                <Button Name="btnRegisterRegister" Margin="10 0 0 0" Grid.Column="2" Content="Register" TabIndex="4" />
+
+            </Grid>
+        </StackPanel>
+    </Border>
+</Window>
