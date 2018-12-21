@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ElectricUI"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
          Title="Register" Height="450" Width="800">
     <Border Padding="10" VerticalAlignment="Center">
         <StackPanel>
-            <TextBlock Text="Register for access to the application." FontWeight="Bold" Margin="0 0 0 20" HorizontalAlignment="Center" />
-
+            <TextBlock Text="Register for access to the application." FontWeight="Bold" Margin="0 0 0 10" HorizontalAlignment="Center" />
+            <Label Name="lblLoginErrorMessage" Content="Error Messages" Foreground="Red" FontWeight="Bold" Margin="0 0 0 10" HorizontalAlignment="Center" />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
