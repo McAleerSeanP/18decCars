@@ -23,5 +23,20 @@ namespace ElectricUI
         {
             InitializeComponent();
         }
+
+        private void btnAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Admin();
+        }
+
+        private void btnReports_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Reports();
+        }
+
+        private void btnStations_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Stations();
+        }
     }
 }

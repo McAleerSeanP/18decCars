@@ -37,7 +37,10 @@ namespace ElectricUI
             {
                 if (user.UserName == currentUser && user.Password == currentPassword)
                 {
-                    MessageBox.Show("User Authenticated");
+                    Dashboard dashboard = new Dashboard();
+                    App.Current.MainWindow = dashboard;
+                    dashboard.Show();
+                    this.Close();
                 }
                 else
                 {

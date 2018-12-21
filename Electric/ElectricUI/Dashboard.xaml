@@ -18,14 +18,13 @@
 
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
             <Button Margin="0 0 10 0" Padding="10" Content="Home"/>
-            <Button Margin="0 0 10 0" Padding="10" Content="Reports"/>
-            <Button Margin="0 0 10 0" Padding="10" Content="Admn"/>
-            <Button Margin="0 0 10 0" Padding="10" Content="Stations"/>
+            <Button Margin="0 0 10 0" Padding="10" Content="Reports" Click="btnReports_Click"/>
+            <Button Margin="0 0 10 0" Padding="10" Content="Admn" Click="btnAdmin_Click"/>
+            <Button Margin="0 0 10 0" Padding="10" Content="Stations" Click="btnStations_Click"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Margin="0 0 10 0" Padding="10" Content="Exit"/>
+            <Button Margin="0 0 10 0" Padding="10" Content="Exit Application"/>
         </StackPanel>
-        <Frame Name="Frame" Grid.Row="1" Grid.ColumnSpan="2" Background="BlueViolet" Margin="0 0 0 0" Height="Auto" Width="Auto" NavigationUIVisibility="Hidden"/>
-
-    </Grid>
+        <Frame Name="Main" Source="Admin.xaml" Grid.Row="1" Grid.ColumnSpan="2" Background="BlueViolet" Margin="5 5 5 5" Height="Auto" Width="Auto" NavigationUIVisibility="Hidden"/>
+        </Grid>
 </Window>
