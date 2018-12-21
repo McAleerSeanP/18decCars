@@ -38,9 +38,10 @@ namespace ElectricUI
                 if (user.UserName == currentUser && user.Password == currentPassword)
                 {
                     Dashboard dashboard = new Dashboard();
+                    dashboard.user = user;
                     App.Current.MainWindow = dashboard;
-                    dashboard.Show();
-                    this.Close();
+                    dashboard.ShowDialog();
+                    this.Hide();
                 }
                 else
                 {

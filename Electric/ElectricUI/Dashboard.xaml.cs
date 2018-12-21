@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,24 +20,30 @@ namespace ElectricUI
     /// </summary>
     public partial class Dashboard : Window
     {
+        public User user = new User();
         public Dashboard()
         {
             InitializeComponent();
         }
 
-        private void btnAdmin_Click(object sender, RoutedEventArgs e)
+        private void MnuExit_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Admin();
+            this.Close();
         }
 
-        private void btnReports_Click(object sender, RoutedEventArgs e)
+        private void CheckUserAccess(User user)
         {
-            Main.Content = new Reports();
+            if (user.AccessLevel == 3)
+            {
+                mnuAdminMenu.Visibility = Visibility.Visible;
+                mnuReportsMenu.Visibility = Visibility.Visible;
+            }
+
         }
 
-        private void btnStations_Click(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Stations();
+            CheckUserAccess(user);
         }
     }
 }

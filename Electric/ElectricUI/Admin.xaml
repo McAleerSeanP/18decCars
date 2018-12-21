@@ -12,8 +12,11 @@
     <Border Background="Blue">
         <Grid>
             <TextBlock Text="Admin Page." FontSize="45" Foreground="White" FontWeight="Bold" Margin="0 10 0 40" HorizontalAlignment="Center" />
-            <StackPanel VerticalAlignment="Center" Grid.Column="0" Margin="0 0 0 0">
+            <StackPanel VerticalAlignment="Top" Grid.Column="0" Margin="0 0 0 0">
                 <Image Source="images/my_electric_car.png" Width="180"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="center" Grid.Column="0" Margin="0 0 0 0">
+                <DataGrid Name="DataGridUsers" AutoGenerateColumns="True"/>
             </StackPanel>
         </Grid>
     </Border>

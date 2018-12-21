@@ -24,5 +24,15 @@ namespace ElectricUI
         {
             InitializeComponent();
         }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // In the example connection is gridtestdataset
+            // db is dbGridTestDataSet
+            // tbl_GridTest is the table
+            // DataGridUser
+
+           
+        }
     }
 }

@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ElectricUI"
         mc:Ignorable="d"
+         WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
         Title="Dashboard" Height="450" Width="800">
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
@@ -16,14 +18,54 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
-            <Button Margin="0 0 10 0" Padding="10" Content="Home"/>
-            <Button Margin="0 0 10 0" Padding="10" Content="Reports" Click="btnReports_Click"/>
-            <Button Margin="0 0 10 0" Padding="10" Content="Admn" Click="btnAdmin_Click"/>
-            <Button Margin="0 0 10 0" Padding="10" Content="Stations" Click="btnStations_Click"/>
+            <Menu Width="Auto" Height="30" Margin="3" VerticalAlignment="Top" HorizontalAlignment="Left" Background="White" BorderBrush="Blue" BorderThickness="1">
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+                <MenuItem Header="_Home" BorderBrush="Blue" BorderThickness="1">
+                    <MenuItem.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </MenuItem.ItemsPanel>
+                </MenuItem>
+                <MenuItem Header="Reports" Name="mnuReportsMenu" BorderBrush="Blue" BorderThickness="1" Visibility="Collapsed">
+                    <MenuItem.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </MenuItem.ItemsPanel>
+                </MenuItem>
+                <MenuItem Header="_Admin" Name="mnuAdminMenu" BorderBrush="Blue" BorderThickness="1" Visibility="Collapsed">
+                    <MenuItem.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </MenuItem.ItemsPanel>
+                </MenuItem>
+                <MenuItem Header="_Reports" BorderBrush="Blue" BorderThickness="1" Visibility="Collapsed">
+                    <MenuItem.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </MenuItem.ItemsPanel>
+                </MenuItem>
+            </Menu>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Margin="0 0 10 0" Padding="10" Content="Exit Application"/>
+            <Menu Width="Auto" Height="30" Margin="5" Background="White" BorderBrush="Blue" BorderThickness="1">
+                <MenuItem Name="mnuExit" Header="_Exit" BorderBrush="Blue" BorderThickness="1" Click="MnuExit_Click">
+                    <MenuItem.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </MenuItem.ItemsPanel>
+                </MenuItem>
+            </Menu>
         </StackPanel>
         <Frame Name="Main" Source="Admin.xaml" Grid.Row="1" Grid.ColumnSpan="2" Background="BlueViolet" Margin="5 5 5 5" Height="Auto" Width="Auto" NavigationUIVisibility="Hidden"/>
         </Grid>
