@@ -17,14 +17,21 @@
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
             <Menu Grid.Row="0" HorizontalAlignment="Left" Height="Auto" Margin="0 0 0 0" VerticalAlignment="Center">
                 <MenuItem Header="_Home" Name="mnuHomeMenu"/>
-                <MenuItem Header="_Reports" Name="mnuReportsMenu" Click="mnuReports_Click" Visibility="Collapsed"/>
-                <MenuItem Header="_Admin" Name="mnuAdminMenu" Click="mnuAdmin_Click" Visibility="Collapsed"/>
-                <MenuItem Header="_Stations" Name="mnuStationsMenu" Click="mnuStations_Click" Visibility="Collapsed"/>
+                <!-- Change This to  Visibility="Collapsed" -->
+                <MenuItem Header="_Reports" Name="mnuReportsMenu" Click="mnuReports_Click"/>
+                <!-- Change This to  Visibility="Collapsed" -->
+                <MenuItem Header="_Admin" Name="mnuAdminMenu" Click="mnuAdmin_Click"/>
+                <!-- Change This to  Visibility="Collapsed" -->
+                <MenuItem Header="_Stations" Name="mnuStationsMenu" Click="mnuStations_Click"/>
             </Menu>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
             <Menu Grid.Row="0" HorizontalAlignment="Right" Height="Auto" Margin="0 0 20 0" VerticalAlignment="Center">
-                <MenuItem Header="E_xit" Name="mnuExitMenu" Click="mnuExit_Click"/>
+                <MenuItem Width="120" Margin="10 0 10 0">
+                    <TextBox VerticalAlignment="Center" Width="100" BorderThickness="1" BorderBrush="Black" Text="Search"/>
+                </MenuItem>
+                <MenuItem Header="_Search" Name="mnuSearch" Click="mnuSearch_Click"/>
+                <MenuItem Header="E_xit" Name="mnuExitMenu" Margin="10 0 0 0" Click="mnuExit_Click"/>
             </Menu>
         </StackPanel>
         <Frame Name="Main" Source="Admin.xaml" Grid.Row="1" Grid.ColumnSpan="2" Background="BlueViolet" Margin="5 5 5 5" Height="Auto" Width="Auto" NavigationUIVisibility="Hidden"/>

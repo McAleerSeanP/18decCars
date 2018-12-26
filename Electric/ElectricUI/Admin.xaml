@@ -5,31 +5,33 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ElectricUI"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="650" d:DesignWidth="800"
       Loaded="UserControl_loaded"
       Title="Admin">
 
 
-    <Border Background="Blue">
-       
-
-        <ListView Name="lstAllUsers" HorizontalAlignment="Center" Height="166" Margin="10 10 10 10" VerticalAlignment="Top" Width="Auto">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Width="Auto" Header="User ID"  >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+            <ListView Name="lstAllUsers" HorizontalAlignment="Center" Height="166" Margin="10 10 10 10" VerticalAlignment="Top" Width="Auto">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="Auto" Header="User ID"  >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
                                 <TextBlock Text="{Binding UserId}" FontWeight="Bold" />
                             </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="First Name" Width="Auto">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="First Name" Width="Auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
                                 <TextBlock Text="{Binding Forename}" FontWeight="Bold" />
                             </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     <GridViewColumn Header="Last Name" Width="Auto">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
@@ -82,10 +84,98 @@
 
 
                 </GridView>
-
+  
             </ListView.View>
-        </ListView>
+            <ListView.ContextMenu>
+                <ContextMenu Name="mnuUserListOverView" IsEnabled="True">
+                    <ContextMenu.Items>
+                        <MenuItem Header="Add new user" Name="submenuAddNewUser" IsEnabled="True">
+                            <MenuItem.Icon>
+                                <Image Stretch="Uniform" Width="90" Height="90" Source="images/add_gray.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Modify selected user" Name="submenuModifySelectedUser" IsEnabled="True">
+                            <MenuItem.Icon>
+                                <Image Width="20" Height="20" Source="images/add_gray.png" Stretch="UniformToFill"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Delete selected user" Name="submenuDeleteSelectedUser" IsEnabled="True">
+                            <MenuItem.Icon>
+                                <Image Width="20" Height="20" Source="images/add_gray.png" Stretch="Uniform"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu.Items>
+                </ContextMenu>
+            </ListView.ContextMenu>
+            </ListView>
 
+        <StackPanel Name="stkUserPanel" VerticalAlignment="Top" Grid.Row="1" Height="Auto">
+            <Grid Margin="10 10 10 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <!-- Row 0  First Column Set 0 + 1 -->
+                <Label Name="lblUserAdmin" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontWeight="Bold" HorizontalAlignment="Center" Content="Message Appears Here"/>
+                <!-- Intentionally left blank -->
+                <!-- Row 0 Second Column Set 2 + 3 -->
+                <Label Grid.Row="0" Grid.Column="2" Content="User Name" HorizontalAlignment="Right"/>
+                <TextBox Name="tbxUserName" Grid.Row="0" Grid.Column="3"/>
+                
+                <!-- Row 1  First Column Set 0 + 1 -->
+                <Label Grid.Row="1" Grid.Column="0" Content="First Name" HorizontalAlignment="Right"/>
+                <TextBox Name="tbxForeName" Grid.Row="1" Grid.Column="1"/>
+                <!-- Row 1 Second Column Set 2 + 3 -->
+                <Label Grid.Row="1" Grid.Column="2" Content="Last Name" HorizontalAlignment="Right"/>
+                <TextBox Name="tbxSurname" Grid.Row="1" Grid.Column="3"/>
 
-    </Border>
+                <!-- Row 2  First Column Set 0 + 1 -->
+                <Label Grid.Row="2" Grid.Column="0" Content="Phone" HorizontalAlignment="Right"/>
+                <TextBox Name="tbxPhone" Grid.Row="2" Grid.Column="1"/>
+                <!-- Row 1 Second Column Set 2 + 3 -->
+                <Label Grid.Row="2" Grid.Column="2" Content="EMail" HorizontalAlignment="Right"/>
+                <TextBox Name="tbxEMail" Grid.Row="2" Grid.Column="3"/>
+
+                <!-- Row 3  First Column Set 0 + 1 -->
+                <Label Grid.Row="3" Grid.Column="0" Content="Number Plate" HorizontalAlignment="Right"/>
+                <TextBox Name="tbxCarReg" Grid.Row="3" Grid.Column="1"/>
+                <!-- Row 3 Second Column Set 2 + 3 -->
+                <Label Grid.Row="3" Grid.Column="2" Content="Password" HorizontalAlignment="Right"/>
+                <TextBox Name="tbxPassword" Grid.Row="3" Grid.Column="3"/>
+
+                <!-- Row 4  First Column Set 0 + 1 -->
+                <Label Grid.Row="4" Grid.Column="0" Content="Access Level" HorizontalAlignment="Right"/>
+                <ComboBox Name="cboAccessLevel" Grid.Row="4" Grid.Column="1">
+                    <ComboBoxItem Content="Please Select"/>
+                    <ComboBoxItem Content="Regular User"/>
+                    <ComboBoxItem Content="Admin"/>
+                </ComboBox>
+                <!-- Row 4 Second Column Set 2 + 3 -->
+                <Label Grid.Row="4" Grid.Column="2" Content="Active" HorizontalAlignment="Right"/>
+                <ComboBox Name="cboActive" Grid.Row="4" Grid.Column="3">
+                    <ComboBoxItem Content="Please Select"/>
+                    <ComboBoxItem Content="InActive"/>
+                    <ComboBoxItem Content="Active"/>
+                </ComboBox>
+                <!--Row 5 Stack Panel For Buttons -->
+                <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Center" Margin="0 10 0 0">
+                    <Button Height="Auto" Width="80" Content="Cancel" Name="ChangeCancel" Margin="10,0"/>
+                    <Button Height="Auto" Width="80" Content="OK" Name="ChangeOK" Margin="10,0"/>
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
+        
+
+    </Grid>
 </Page>

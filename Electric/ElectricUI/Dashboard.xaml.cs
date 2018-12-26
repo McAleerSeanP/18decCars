@@ -75,6 +75,9 @@ namespace ElectricUI
             CheckUserAccess(user);
         }
 
-    
+        private void mnuSearch_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
