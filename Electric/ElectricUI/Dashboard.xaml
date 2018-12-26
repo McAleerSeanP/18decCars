@@ -13,58 +13,18 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
-            <Menu Width="Auto" Height="30" Margin="3" VerticalAlignment="Top" HorizontalAlignment="Left" Background="White" BorderBrush="Blue" BorderThickness="1">
-            <Menu.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <VirtualizingStackPanel Orientation="Horizontal" />
-                </ItemsPanelTemplate>
-            </Menu.ItemsPanel>
-                <MenuItem Header="_Home" BorderBrush="Blue" BorderThickness="1">
-                    <MenuItem.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </MenuItem.ItemsPanel>
-                </MenuItem>
-                <MenuItem Header="Reports" Name="mnuReportsMenu" BorderBrush="Blue" BorderThickness="1" Visibility="Collapsed">
-                    <MenuItem.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </MenuItem.ItemsPanel>
-                </MenuItem>
-                <MenuItem Header="_Admin" Name="mnuAdminMenu" BorderBrush="Blue" BorderThickness="1" Visibility="Collapsed">
-                    <MenuItem.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </MenuItem.ItemsPanel>
-                </MenuItem>
-                <MenuItem Header="_Reports" BorderBrush="Blue" BorderThickness="1" Visibility="Collapsed">
-                    <MenuItem.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </MenuItem.ItemsPanel>
-                </MenuItem>
+            <Menu Grid.Row="0" HorizontalAlignment="Left" Height="Auto" Margin="0 0 0 0" VerticalAlignment="Center">
+                <MenuItem Header="_Home" Name="mnuHomeMenu"/>
+                <MenuItem Header="_Reports" Name="mnuReportsMenu" Click="mnuReports_Click" Visibility="Collapsed"/>
+                <MenuItem Header="_Admin" Name="mnuAdminMenu" Click="mnuAdmin_Click" Visibility="Collapsed"/>
+                <MenuItem Header="_Stations" Name="mnuStationsMenu" Click="mnuStations_Click" Visibility="Collapsed"/>
             </Menu>
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Menu Width="Auto" Height="30" Margin="5" Background="White" BorderBrush="Blue" BorderThickness="1">
-                <MenuItem Name="mnuExit" Header="_Exit" BorderBrush="Blue" BorderThickness="1" Click="MnuExit_Click">
-                    <MenuItem.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel Orientation="Horizontal" />
-                        </ItemsPanelTemplate>
-                    </MenuItem.ItemsPanel>
-                </MenuItem>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Menu Grid.Row="0" HorizontalAlignment="Right" Height="Auto" Margin="0 0 20 0" VerticalAlignment="Center">
+                <MenuItem Header="E_xit" Name="mnuExitMenu" Click="mnuExit_Click"/>
             </Menu>
         </StackPanel>
         <Frame Name="Main" Source="Admin.xaml" Grid.Row="1" Grid.ColumnSpan="2" Background="BlueViolet" Margin="5 5 5 5" Height="Auto" Width="Auto" NavigationUIVisibility="Hidden"/>

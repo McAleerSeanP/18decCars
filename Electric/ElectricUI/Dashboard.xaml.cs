@@ -20,23 +20,52 @@ namespace ElectricUI
     /// </summary>
     public partial class Dashboard : Window
     {
+ 
         public User user = new User();
         public Dashboard()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Click Menu Items
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mnuReports_Click(object sender, RoutedEventArgs e)
+        {
 
-        private void MnuExit_Click(object sender, RoutedEventArgs e)
+        }
+
+        private void mnuAdmin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void mnuStations_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void mnuExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Check user access level and determine menu visibility
+        /// </summary>
+        /// <param name="user"></param>
         private void CheckUserAccess(User user)
         {
-            if (user.AccessLevel == 3)
+            if (user.AccessLevel > 1)
+            {
+                mnuReportsMenu.Visibility = Visibility.Visible;
+            }
+
+            if (user.AccessLevel > 2)
             {
                 mnuAdminMenu.Visibility = Visibility.Visible;
-                mnuReportsMenu.Visibility = Visibility.Visible;
+                mnuStationsMenu.Visibility = Visibility.Visible;
             }
 
         }
@@ -45,5 +74,7 @@ namespace ElectricUI
         {
             CheckUserAccess(user);
         }
+
+    
     }
 }

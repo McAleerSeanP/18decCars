@@ -11,7 +11,7 @@
     <Border Padding="10" VerticalAlignment="Center">
         <StackPanel>
             <TextBlock Text="Register for access to the application." FontWeight="Bold" Margin="0 0 0 10" HorizontalAlignment="Center" />
-            <Label Name="lblLoginErrorMessage" Content="Error Messages" Foreground="Red" FontWeight="Bold" Margin="0 0 0 10" HorizontalAlignment="Center" />
+            <Label Name="lblLoginErrorMessage" Content="" Foreground="Red" FontWeight="Bold" Margin="0 0 0 10" HorizontalAlignment="Center" />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
@@ -28,7 +28,7 @@
                 <StackPanel Grid.Column="1" Margin="0 0 0 0">
                     <DockPanel Width="Auto">
                         <Label Content="Desired Username" Margin="5"/>
-                        <TextBox Name="tbxRegisterUserName" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                        <TextBox Name="tbxRegisterUserName" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180" />
                     </DockPanel>
 
                     <DockPanel Width="Auto">
@@ -72,7 +72,7 @@
 
 
                 <Button Name="btnRegisterCancel" Click="btxRegisterCancel_Click" Margin="0 0 0 0" Grid.Column="1" Content="Cancel" TabIndex="3" />
-                <Button Name="btnRegisterRegister" Margin="10 0 0 0" Grid.Column="2" Content="Register" TabIndex="4" />
+                <Button Name="btnRegisterRegister" Margin="10 0 0 0" Grid.Column="2" Content="Register" TabIndex="4" Click="BtnRegisterRegister_Click" />
 
             </Grid>
         </StackPanel>
