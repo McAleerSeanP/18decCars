@@ -28,37 +28,37 @@
                 <StackPanel Grid.Column="1" Margin="0 0 0 0">
                     <DockPanel Width="Auto">
                         <Label Content="Desired Username" Margin="5"/>
-                        <TextBox Name="tbxRegisterUserName" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180" />
+                        <TextBox LostFocus="TbxRegisterUserName_LostFocus" Name="tbxRegisterUserName" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180" />
                     </DockPanel>
 
                     <DockPanel Width="Auto">
                         <Label Content="Your First Name" Margin="5"/>
-                        <TextBox Name="tbxRegisterForename" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                        <TextBox LostFocus="TbxRegisterForename_LostFocus" Name="tbxRegisterForename" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
                     </DockPanel>
 
                     <DockPanel Width="Auto">
                         <Label Content="Your Last Name" Margin="5"/>
-                        <TextBox Name="tbxRegisterSurname" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                        <TextBox LostFocus="TbxRegisterSurname_LostFocus" Name="tbxRegisterSurname" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
                     </DockPanel>
                     <DockPanel Width="Auto">
                         <Label Content="Your EMail" Margin="5"/>
-                        <TextBox Name="tbxRegisterEMail" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                        <TextBox LostFocus="TbxRegisterEMail_LostFocus"  Name="tbxRegisterEMail" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
                     </DockPanel>
                     <DockPanel Width="Auto">
                         <Label Content="Your Mobile Phone" Margin="5"/>
-                        <TextBox Name="tbxRegisterPhone" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                        <TextBox LostFocus="TbxRegisterPhone_LostFocus" Name="tbxRegisterPhone" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
                     </DockPanel>
                     <DockPanel Width="Auto">
                         <Label Content="Your Car Registration (Number Plate)" Margin="5"/>
-                        <TextBox Name="tbxRegisterCarReg" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                        <TextBox LostFocus="TbxRegisterCarReg_LostFocus" Name="tbxRegisterCarReg" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
                     </DockPanel>
                     <DockPanel Width="Auto">
                         <Label Content="Password" Margin="5"/>
-                        <PasswordBox Name="tbxRegisterPassword" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                        <PasswordBox LostFocus="TbxRegisterPassword_LostFocus" Name="tbxRegisterPassword" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
                     </DockPanel>
                     <DockPanel Margin="0 0 0 10" Width="Auto">
                         <Label Content="Repeat Password" Margin="5"/>
-                        <PasswordBox Name="tbxRegisterPasswordRpt" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
+                        <PasswordBox LostFocus="TbxRegisterPasswordRpt_LostFocus" Name="tbxRegisterPasswordRpt" Padding="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 10 0" Width="180"/>
                     </DockPanel>
                 </StackPanel>
             </Grid>

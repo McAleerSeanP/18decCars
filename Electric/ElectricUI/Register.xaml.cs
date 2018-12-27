@@ -1,17 +1,19 @@
 ﻿using DBLibrary;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
+
+
+//verify that email address format is correct
+public static class ValidatorExtensions
+{
+    public static bool IsValidEmailAddress(this string s)
+    {
+        Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
+        return regex.IsMatch(s);
+    }
+}
+
 
 namespace ElectricUI
 {
@@ -34,12 +36,27 @@ namespace ElectricUI
             this.Close();
         }
 
-        //Validate Thta test boxes are not empty
-        private void TbxRegisterUserName_Leave(object sender, System.EventArgs e)
+        /// <summary>
+        /// Checks that the chosen username does not already exist
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TbxRegisterUserName_LostFocus(object sender, RoutedEventArgs e)
         {
-            //validate username
-            lblLoginErrorMessage.Content = "A User Name Is Reguired";
+            if (tbxRegisterUserName.Text == "")
+            {
+                lblLoginErrorMessage.Content = "A username is required.";
+            }
+            //Setup strings to use in db check
+            string currentUserName = tbxRegisterUserName.Text;
+            foreach (var user in db.Users)
+                if (user.UserName == currentUserName)
+                {
+                    lblLoginErrorMessage.Content = "Sorry that user name exists.";
+                }
+
         }
+
 
 
         private void BtnRegisterRegister_Click(object sender, RoutedEventArgs e)
@@ -73,6 +90,70 @@ namespace ElectricUI
             return saveSuccess;
         }
 
+        private void TbxRegisterForename_LostFocus(object sender, RoutedEventArgs e)
+        {
+            lblLoginErrorMessage.Content = "";
+            if (tbxRegisterForename.Text.Length == 0 || tbxRegisterForename.Text.Length > 30)
+            {
+                lblLoginErrorMessage.Content = "First name cannot be blank and must be less than 30 characters.";
+            }
+        }
 
+        private void TbxRegisterSurname_LostFocus(object sender, RoutedEventArgs e)
+        {
+            lblLoginErrorMessage.Content = "";
+            if (tbxRegisterSurname.Text.Length == 0 || tbxRegisterSurname.Text.Length > 30)
+            {
+                lblLoginErrorMessage.Content = "Last name cannot be blank and must be less than 30 characters.";
+            }
+        }
+
+        private void TbxRegisterEMail_LostFocus(object sender, RoutedEventArgs e)
+        {
+            lblLoginErrorMessage.Content = "";
+            bool result = ValidatorExtensions.IsValidEmailAddress(tbxRegisterEMail.Text);
+            //MessageBox.Show(result.ToString(), Title);
+            if (result == false)
+            {
+                lblLoginErrorMessage.Content = "Please check your email and the format of your email.";
+            }
+        }
+
+        private void TbxRegisterPhone_LostFocus(object sender, RoutedEventArgs e)
+        {
+            lblLoginErrorMessage.Content = "";
+            if (tbxRegisterPhone.Text.Length == 0 || tbxRegisterPhone.Text.Length > 20)
+            {
+                lblLoginErrorMessage.Content = "Phone Number cannot be blank and must be less than 20 characters.";
+            }
+        }
+
+        private void TbxRegisterCarReg_LostFocus(object sender, RoutedEventArgs e)
+        {
+            lblLoginErrorMessage.Content = "";
+            if (tbxRegisterCarReg.Text.Length == 0 || tbxRegisterCarReg.Text.Length > 20)
+            {
+                lblLoginErrorMessage.Content = "Number plate cannot be blank and must be less than 20 characters.";
+            }
+        }
+
+        private void TbxRegisterPassword_LostFocus(object sender, RoutedEventArgs e)
+        {
+            lblLoginErrorMessage.Content = "";
+            if (tbxRegisterPassword.Password.Length == 0 || tbxRegisterPassword.Password.Length > 30)
+            {
+                lblLoginErrorMessage.Content = "Password cannot be blank and must be less than 30 characters.";
+            }
+        }
+
+        private void TbxRegisterPasswordRpt_LostFocus(object sender, RoutedEventArgs e)
+        {
+            lblLoginErrorMessage.Content = "";
+            if (tbxRegisterPassword.Password.Length == 0 || tbxRegisterPasswordRpt.Password != tbxRegisterPasswordRpt.Password)
+            {
+                lblLoginErrorMessage.Content = "Password cannot be blank and must be the same as the password field above it.";
+            }
+        }
     }
 }
+
