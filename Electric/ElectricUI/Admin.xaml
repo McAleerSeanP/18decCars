@@ -91,17 +91,17 @@
                     <ContextMenu.Items>
                         <MenuItem Header="Add new user" Name="submenuAddNewUser" IsEnabled="True">
                             <MenuItem.Icon>
-                                <Image Stretch="Uniform" Width="90" Height="90" Source="images/add_gray.png"/>
+                                <Image Source="images/add.png" SnapsToDevicePixels="True" Stretch="Fill"/>
                             </MenuItem.Icon>
                         </MenuItem>
                         <MenuItem Header="Modify selected user" Name="submenuModifySelectedUser" IsEnabled="True">
                             <MenuItem.Icon>
-                                <Image Width="20" Height="20" Source="images/add_gray.png" Stretch="UniformToFill"/>
+                                <Image Source="images/edit.png" SnapsToDevicePixels="True" Stretch="Fill"/>
                             </MenuItem.Icon>
                         </MenuItem>
                         <MenuItem Header="Delete selected user" Name="submenuDeleteSelectedUser" IsEnabled="True">
                             <MenuItem.Icon>
-                                <Image Width="20" Height="20" Source="images/add_gray.png" Stretch="Uniform"/>
+                                <Image Source="images/delete.png" SnapsToDevicePixels="True" Stretch="Fill"/>
                             </MenuItem.Icon>
                         </MenuItem>
                     </ContextMenu.Items>

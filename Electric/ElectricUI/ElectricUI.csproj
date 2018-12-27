@@ -156,12 +156,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\add_gray.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="images\add.png" />
-    <Resource Include="images\delete-sign.png" />
-    <Resource Include="images\pencil.png" />
+    <Resource Include="images\delete.png" />
+    <Resource Include="images\edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
