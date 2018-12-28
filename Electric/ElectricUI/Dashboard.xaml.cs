@@ -31,19 +31,29 @@ namespace ElectricUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        
+        private void MnuHomeMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Initial_Screen Initial_Screen = new Initial_Screen();
+            frmMain.Navigate(Initial_Screen);
+        }
+
         private void mnuReports_Click(object sender, RoutedEventArgs e)
         {
-
+            Reports reports = new Reports();
+            frmMain.Navigate(reports);
         }
 
         private void mnuAdmin_Click(object sender, RoutedEventArgs e)
         {
-
+            Admin admin = new Admin();
+            frmMain.Navigate(admin);
         }
 
         private void mnuStations_Click(object sender, RoutedEventArgs e)
         {
-
+            Stations stations = new Stations();
+            frmMain.Navigate(stations);
         }
 
         private void mnuExit_Click(object sender, RoutedEventArgs e)
@@ -60,15 +70,18 @@ namespace ElectricUI
             if (user.AccessLevel > 1)
             {
                 mnuReportsMenu.Visibility = Visibility.Visible;
+                mnuAdminMenu.Visibility = Visibility.Visible;
             }
 
             if (user.AccessLevel > 2)
             {
-                mnuAdminMenu.Visibility = Visibility.Visible;
                 mnuStationsMenu.Visibility = Visibility.Visible;
             }
 
+
         }
+
+ 
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -79,5 +92,7 @@ namespace ElectricUI
         {
 
         }
+
+
     }
 }

@@ -16,13 +16,13 @@
 
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
             <Menu Grid.Row="0" HorizontalAlignment="Left" Height="Auto" Margin="0 0 0 0" VerticalAlignment="Center">
-                <MenuItem Header="_Home" Name="mnuHomeMenu"/>
+                <MenuItem Header="_Home" Name="mnuHomeMenu" Click="MnuHomeMenu_Click"/>
                 <!-- Change This to  Visibility="Collapsed" -->
-                <MenuItem Header="_Reports" Name="mnuReportsMenu" Click="mnuReports_Click"/>
+                <MenuItem Header="_Reports" Name="mnuReportsMenu" Click="mnuReports_Click" Visibility="Collapsed"/>
                 <!-- Change This to  Visibility="Collapsed" -->
-                <MenuItem Header="_Admin" Name="mnuAdminMenu" Click="mnuAdmin_Click"/>
+                <MenuItem Header="_Admin" Name="mnuAdminMenu" Click="mnuAdmin_Click" Visibility="Collapsed"/>
                 <!-- Change This to  Visibility="Collapsed" -->
-                <MenuItem Header="_Stations" Name="mnuStationsMenu" Click="mnuStations_Click"/>
+                <MenuItem Header="_Stations" Name="mnuStationsMenu" Click="mnuStations_Click" Visibility="Collapsed"/>
             </Menu>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
@@ -34,6 +34,6 @@
                 <MenuItem Header="E_xit" Name="mnuExitMenu" Margin="10 0 0 0" Click="mnuExit_Click"/>
             </Menu>
         </StackPanel>
-        <Frame Name="Main" Source="Admin.xaml" Grid.Row="1" Grid.ColumnSpan="2" Background="BlueViolet" Margin="5 5 5 5" Height="Auto" Width="Auto" NavigationUIVisibility="Hidden"/>
+        <Frame Name="frmMain" Source="Initial_Screen.xaml" Grid.Row="1" Grid.ColumnSpan="2" Margin="5 5 5 5" Height="Auto" Width="Auto" NavigationUIVisibility="Hidden"/>
         </Grid>
 </Window>
